@@ -1,8 +1,24 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django.utils.translation import ugettext_lazy as _
 
 from backend.models import User, Shop, Category, Product, ProductInfo, Parameter, ProductParameter, Order, OrderItem, \
     Contact, ConfirmEmailToken
+
+
+class ContactInline(admin.TabularInline):
+    model = Contact
+    max_num = 1
+
+
+class ProductInline(admin.TabularInline):
+    model = Product
+    extra = 1
+
+
+class OrderItemInline(admin.TabularInline):
+    model = OrderItem
+    extra = 2
 
 
 @admin.register(User)
@@ -25,12 +41,19 @@ class CustomUserAdmin(UserAdmin):
 
 @admin.register(Shop)
 class ShopAdmin(admin.ModelAdmin):
-    pass
+    model = Shop
+    fieldsets = (
+        (None, {'fields': ('name', 'state')}),
+        (_('Additional Info'), {'fields': ('url', 'user'),
+                             'classes': ('collapse',)}),
+    )
+    list_display = ('name', 'state', 'url')
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    model = Category
+    inlines = [ProductInline]
 
 
 @admin.register(Product)
@@ -38,9 +61,21 @@ class ProductAdmin(admin.ModelAdmin):
     pass
 
 
+class ProductParameterInline(admin.TabularInline):
+    model = ProductParameter
+    extra = 1
+
+
 @admin.register(ProductInfo)
 class ProductInfoAdmin(admin.ModelAdmin):
-    pass
+    model = ProductInfo
+    fieldsets = (
+        (None, {'fields': ('product', 'model', 'external_id', 'quantity')}),
+        (_('Цены'), {'fields': ('price', 'price_rrc')}),
+    )
+    list_display = ('product', 'external_id', 'price', 'price_rrc', 'quantity')
+    ordering = ('external_id',)
+    inlines = [ProductParameterInline]
 
 
 @admin.register(Parameter)
@@ -55,7 +90,13 @@ class ProductParameterAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    pass
+    model = Order
+    fields = ('user', 'state', 'contact')
+    list_display = ('user', 'dt', 'state')
+    ordering = ('dt',)
+    inlines = [
+        OrderItemInline,
+    ]
 
 
 @admin.register(OrderItem)
