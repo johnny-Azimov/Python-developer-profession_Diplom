@@ -10,6 +10,7 @@ from django.http import JsonResponse
 
 from requests import get
 
+from rest_framework import viewsets
 from rest_framework.authtoken.models import Token
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
@@ -29,6 +30,8 @@ class RegisterAccount(APIView):
     """
     Для регистрации покупателей
     """
+    throttle_scope = 'anon'
+
     # Регистрация методом POST
     def post(self, request, *args, **kwargs):
 
@@ -69,6 +72,8 @@ class ConfirmAccount(APIView):
     Класс для подтверждения почтового адреса
     """
     # Регистрация методом POST
+    throttle_scope = 'anon'
+
     def post(self, request, *args, **kwargs):
 
         # проверяем обязательные аргументы
@@ -91,6 +96,7 @@ class AccountDetails(APIView):
     """
     Класс для работы данными пользователя
     """
+    throttle_scope = 'user'
 
     # получить данные
     def get(self, request, *args, **kwargs):
@@ -150,31 +156,37 @@ class LoginAccount(APIView):
         return JsonResponse({'Status': False, 'Errors': 'Не указаны все необходимые аргументы'})
 
 
-class CategoryView(ListAPIView):
+class CategoryView(viewsets.ModelViewSet):
     """
     Класс для просмотра категорий
     """
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    ordering = ('name',)
 
 
-class ShopView(ListAPIView):
+class ShopView(viewsets.ModelViewSet):
     """
     Класс для просмотра списка магазинов
     """
     queryset = Shop.objects.filter(state=True)
     serializer_class = ShopSerializer
+    ordering = ('name',)
 
 
-class ProductInfoView(APIView):
+class ProductInfoView(viewsets.ReadOnlyModelViewSet):
     """
     Класс для поиска товаров
     """
-    def get(self, request, *args, **kwargs):
+    throttle_scope = 'anon'
+    serializer_class = ProductInfoSerializer
+    ordering = ('product',)
+
+    def get_queryset(self):
 
         query = Q(shop__state=True)
-        shop_id = request.query_params.get('shop_id')
-        category_id = request.query_params.get('category_id')
+        shop_id = self.request.query_params.get('shop_id')
+        category_id = self.request.query_params.get('category_id')
 
         if shop_id:
             query = query & Q(shop_id=shop_id)
@@ -182,21 +194,20 @@ class ProductInfoView(APIView):
         if category_id:
             query = query & Q(product__category_id=category_id)
 
-        # фильтруем и отбрасываем дуликаты
+        # фильтруем и отбрасываем дубликаты
         queryset = ProductInfo.objects.filter(
             query).select_related(
             'shop', 'product__category').prefetch_related(
             'product_parameters__parameter').distinct()
 
-        serializer = ProductInfoSerializer(queryset, many=True)
-
-        return Response(serializer.data)
+        return queryset
 
 
 class BasketView(APIView):
     """
     Класс для работы с корзиной пользователя
     """
+    throttle_scope = 'user'
 
     # получить корзину
     def get(self, request, *args, **kwargs):
@@ -291,6 +302,8 @@ class PartnerUpdate(APIView):
     """
     Класс для обновления прайса от поставщика
     """
+    throttle_scope = 'partner'
+
     def post(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             return JsonResponse({'Status': False, 'Error': 'Log in required'}, status=403)
@@ -341,6 +354,7 @@ class PartnerState(APIView):
     """
     Класс для работы со статусом поставщика
     """
+    throttle_scope = 'user'
 
     # получить текущий статус
     def get(self, request, *args, **kwargs):
@@ -376,6 +390,8 @@ class PartnerOrders(APIView):
     """
     Класс для получения заказов поставщиками
     """
+    throttle_scope = 'user'
+
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             return JsonResponse({'Status': False, 'Error': 'Log in required'}, status=403)
@@ -397,6 +413,7 @@ class ContactView(APIView):
     """
     Класс для работы с контактами покупателей
     """
+    throttle_scope = 'user'
 
     # получить мои контакты
     def get(self, request, *args, **kwargs):
@@ -469,6 +486,7 @@ class OrderView(APIView):
     """
     Класс для получения и размешения заказов пользователями
     """
+    throttle_scope = 'user'
 
     # получить мои заказы
     def get(self, request, *args, **kwargs):
