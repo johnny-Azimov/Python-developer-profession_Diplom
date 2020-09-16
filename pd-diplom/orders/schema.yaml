@@ -1,0 +1,891 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /api/partner/state:
+    get:
+      operationId: listPartnerStates
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0441\u043E \u0441\u0442\u0430\u0442\u0443\u0441\
+        \u043E\u043C \u043F\u043E\u0441\u0442\u0430\u0432\u0449\u0438\u043A\u0430"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+    post:
+      operationId: CreatePartnerState
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0441\u043E \u0441\u0442\u0430\u0442\u0443\u0441\
+        \u043E\u043C \u043F\u043E\u0441\u0442\u0430\u0432\u0449\u0438\u043A\u0430"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+  /api/partner/orders:
+    get:
+      operationId: listPartnerOrders
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u043E\
+        \u043B\u0443\u0447\u0435\u043D\u0438\u044F \u0437\u0430\u043A\u0430\u0437\u043E\
+        \u0432 \u043F\u043E\u0441\u0442\u0430\u0432\u0449\u0438\u043A\u0430\u043C\u0438"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+  /api/user/details:
+    get:
+      operationId: listAccountDetails
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0434\u0430\u043D\u043D\u044B\u043C\u0438 \u043F\
+        \u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+    post:
+      operationId: CreateAccountDetails
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0434\u0430\u043D\u043D\u044B\u043C\u0438 \u043F\
+        \u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+  /api/user/contact:
+    get:
+      operationId: listContacts
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0441 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\
+        \u0430\u043C\u0438 \u043F\u043E\u043A\u0443\u043F\u0430\u0442\u0435\u043B\u0435\
+        \u0439"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+    post:
+      operationId: CreateContact
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0441 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\
+        \u0430\u043C\u0438 \u043F\u043E\u043A\u0443\u043F\u0430\u0442\u0435\u043B\u0435\
+        \u0439"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+    put:
+      operationId: UpdateContact
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0441 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\
+        \u0430\u043C\u0438 \u043F\u043E\u043A\u0443\u043F\u0430\u0442\u0435\u043B\u0435\
+        \u0439"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+    delete:
+      operationId: DestroyContact
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0441 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\
+        \u0430\u043C\u0438 \u043F\u043E\u043A\u0443\u043F\u0430\u0442\u0435\u043B\u0435\
+        \u0439"
+      parameters: []
+      responses:
+        '204':
+          description: ''
+  /api/basket:
+    get:
+      operationId: listBaskets
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0441 \u043A\u043E\u0440\u0437\u0438\u043D\u043E\
+        \u0439 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+    post:
+      operationId: CreateBasket
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0441 \u043A\u043E\u0440\u0437\u0438\u043D\u043E\
+        \u0439 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+    put:
+      operationId: UpdateBasket
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0441 \u043A\u043E\u0440\u0437\u0438\u043D\u043E\
+        \u0439 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+    delete:
+      operationId: DestroyBasket
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0440\u0430\
+        \u0431\u043E\u0442\u044B \u0441 \u043A\u043E\u0440\u0437\u0438\u043D\u043E\
+        \u0439 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F"
+      parameters: []
+      responses:
+        '204':
+          description: ''
+  /api/order:
+    get:
+      operationId: listOrders
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u043E\
+        \u043B\u0443\u0447\u0435\u043D\u0438\u044F \u0438 \u0440\u0430\u0437\u043C\
+        \u0435\u0448\u0435\u043D\u0438\u044F \u0437\u0430\u043A\u0430\u0437\u043E\u0432\
+        \ \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F\
+        \u043C\u0438"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+    post:
+      operationId: CreateOrder
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u043E\
+        \u043B\u0443\u0447\u0435\u043D\u0438\u044F \u0438 \u0440\u0430\u0437\u043C\
+        \u0435\u0448\u0435\u043D\u0438\u044F \u0437\u0430\u043A\u0430\u0437\u043E\u0432\
+        \ \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F\
+        \u043C\u0438"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+  /api/shops/:
+    get:
+      operationId: listShops
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u0441\u043F\u0438\u0441\u043A\u0430\
+        \ \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u043E\u0432"
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                  previous:
+                    type: string
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      properties:
+                        id:
+                          type: integer
+                          readOnly: true
+                        name:
+                          type: string
+                          maxLength: 32
+                        state:
+                          type: boolean
+                      required:
+                      - name
+          description: ''
+    post:
+      operationId: createShop
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u0441\u043F\u0438\u0441\u043A\u0430\
+        \ \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u043E\u0432"
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: &id001
+              properties:
+                name:
+                  type: string
+                  maxLength: 32
+                state:
+                  type: boolean
+              required:
+              - name
+          application/x-www-form-urlencoded:
+            schema: *id001
+          multipart/form-data:
+            schema: *id001
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 32
+                  state:
+                    type: boolean
+                required:
+                - name
+          description: ''
+  /api/shops/{id}/:
+    get:
+      operationId: retrieveShop
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u0441\u043F\u0438\u0441\u043A\u0430\
+        \ \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u043E\u0432"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u043C\u0430\u0433\u0430\
+          \u0437\u0438\u043D."
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 32
+                  state:
+                    type: boolean
+                required:
+                - name
+          description: ''
+    put:
+      operationId: updateShop
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u0441\u043F\u0438\u0441\u043A\u0430\
+        \ \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u043E\u0432"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u043C\u0430\u0433\u0430\
+          \u0437\u0438\u043D."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema: &id002
+              properties:
+                name:
+                  type: string
+                  maxLength: 32
+                state:
+                  type: boolean
+              required:
+              - name
+          application/x-www-form-urlencoded:
+            schema: *id002
+          multipart/form-data:
+            schema: *id002
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 32
+                  state:
+                    type: boolean
+                required:
+                - name
+          description: ''
+    patch:
+      operationId: partial_updateShop
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u0441\u043F\u0438\u0441\u043A\u0430\
+        \ \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u043E\u0432"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u043C\u0430\u0433\u0430\
+          \u0437\u0438\u043D."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema: &id003
+              properties:
+                name:
+                  type: string
+                  maxLength: 32
+                state:
+                  type: boolean
+          application/x-www-form-urlencoded:
+            schema: *id003
+          multipart/form-data:
+            schema: *id003
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 32
+                  state:
+                    type: boolean
+                required:
+                - name
+          description: ''
+    delete:
+      operationId: destroyShop
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u0441\u043F\u0438\u0441\u043A\u0430\
+        \ \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u043E\u0432"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u043C\u0430\u0433\u0430\
+          \u0437\u0438\u043D."
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+  /api/categories/:
+    get:
+      operationId: listCategorys
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u043A\u0430\u0442\u0435\u0433\u043E\
+        \u0440\u0438\u0439"
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                  previous:
+                    type: string
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      properties:
+                        id:
+                          type: integer
+                          readOnly: true
+                        name:
+                          type: string
+                          maxLength: 32
+                      required:
+                      - name
+          description: ''
+    post:
+      operationId: createCategory
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u043A\u0430\u0442\u0435\u0433\u043E\
+        \u0440\u0438\u0439"
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: &id004
+              properties:
+                name:
+                  type: string
+                  maxLength: 32
+              required:
+              - name
+          application/x-www-form-urlencoded:
+            schema: *id004
+          multipart/form-data:
+            schema: *id004
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 32
+                required:
+                - name
+          description: ''
+  /api/categories/{id}/:
+    get:
+      operationId: retrieveCategory
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u043A\u0430\u0442\u0435\u0433\u043E\
+        \u0440\u0438\u0439"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u043A\u0430\u0442\u0435\
+          \u0433\u043E\u0440\u0438\u044F."
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 32
+                required:
+                - name
+          description: ''
+    put:
+      operationId: updateCategory
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u043A\u0430\u0442\u0435\u0433\u043E\
+        \u0440\u0438\u0439"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u043A\u0430\u0442\u0435\
+          \u0433\u043E\u0440\u0438\u044F."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema: &id005
+              properties:
+                name:
+                  type: string
+                  maxLength: 32
+              required:
+              - name
+          application/x-www-form-urlencoded:
+            schema: *id005
+          multipart/form-data:
+            schema: *id005
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 32
+                required:
+                - name
+          description: ''
+    patch:
+      operationId: partial_updateCategory
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u043A\u0430\u0442\u0435\u0433\u043E\
+        \u0440\u0438\u0439"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u043A\u0430\u0442\u0435\
+          \u0433\u043E\u0440\u0438\u044F."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema: &id006
+              properties:
+                name:
+                  type: string
+                  maxLength: 32
+          application/x-www-form-urlencoded:
+            schema: *id006
+          multipart/form-data:
+            schema: *id006
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 32
+                required:
+                - name
+          description: ''
+    delete:
+      operationId: destroyCategory
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u0440\
+        \u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u043A\u0430\u0442\u0435\u0433\u043E\
+        \u0440\u0438\u0439"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u043A\u0430\u0442\u0435\
+          \u0433\u043E\u0440\u0438\u044F."
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+  /api/products/:
+    get:
+      operationId: listProductInfos
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u043E\
+        \u0438\u0441\u043A\u0430 \u0442\u043E\u0432\u0430\u0440\u043E\u0432"
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                  previous:
+                    type: string
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      properties:
+                        id:
+                          type: integer
+                          readOnly: true
+                        model:
+                          type: string
+                          maxLength: 64
+                        product:
+                          properties:
+                            name:
+                              type: string
+                              maxLength: 64
+                            category:
+                              type: string
+                              readOnly: true
+                          required:
+                          - name
+                          type: object
+                          readOnly: true
+                        shop:
+                          type: integer
+                        quantity:
+                          type: integer
+                        price:
+                          type: integer
+                        price_rrc:
+                          type: integer
+                        product_parameters:
+                          type: array
+                          items:
+                            properties:
+                              parameter:
+                                type: string
+                                readOnly: true
+                              value:
+                                type: string
+                                maxLength: 128
+                            required:
+                            - value
+                          readOnly: true
+                      required:
+                      - quantity
+                      - price
+                      - price_rrc
+          description: ''
+  /api/products/{id}/:
+    get:
+      operationId: retrieveProductInfo
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u043E\
+        \u0438\u0441\u043A\u0430 \u0442\u043E\u0432\u0430\u0440\u043E\u0432"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  model:
+                    type: string
+                    maxLength: 64
+                  product:
+                    properties:
+                      name:
+                        type: string
+                        maxLength: 64
+                      category:
+                        type: string
+                        readOnly: true
+                    required:
+                    - name
+                    type: object
+                    readOnly: true
+                  shop:
+                    type: integer
+                  quantity:
+                    type: integer
+                  price:
+                    type: integer
+                  price_rrc:
+                    type: integer
+                  product_parameters:
+                    type: array
+                    items:
+                      properties:
+                        parameter:
+                          type: string
+                          readOnly: true
+                        value:
+                          type: string
+                          maxLength: 128
+                      required:
+                      - value
+                    readOnly: true
+                required:
+                - quantity
+                - price
+                - price_rrc
+          description: ''
+  /api/partner/update:
+    post:
+      operationId: CreatePartnerUpdate
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043E\u0431\
+        \u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F \u043F\u0440\u0430\u0439\u0441\
+        \u0430 \u043E\u0442 \u043F\u043E\u0441\u0442\u0430\u0432\u0449\u0438\u043A\
+        \u0430"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+  /api/user/register:
+    post:
+      operationId: CreateRegisterAccount
+      description: "\u0414\u043B\u044F \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\
+        \u0446\u0438\u0438 \u043F\u043E\u043A\u0443\u043F\u0430\u0442\u0435\u043B\u0435\
+        \u0439"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+  /api/user/register/confirm:
+    post:
+      operationId: CreateConfirmAccount
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u043F\u043E\
+        \u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u044F \u043F\u043E\
+        \u0447\u0442\u043E\u0432\u043E\u0433\u043E \u0430\u0434\u0440\u0435\u0441\u0430"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+  /api/user/login:
+    post:
+      operationId: CreateLoginAccount
+      description: "\u041A\u043B\u0430\u0441\u0441 \u0434\u043B\u044F \u0430\u0432\
+        \u0442\u043E\u0440\u0438\u0437\u0430\u0446\u0438\u0438 \u043F\u043E\u043B\u044C\
+        \u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0435\u0439"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+  /api/user/password_reset:
+    post:
+      operationId: CreateEmail
+      description: 'An Api View which provides a method to request a password reset
+        token based on an e-mail address
+
+
+        Sends a signal reset_password_token_created when a reset token was created'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: &id007
+              properties:
+                email:
+                  type: string
+                  format: email
+              required:
+              - email
+          application/x-www-form-urlencoded:
+            schema: *id007
+          multipart/form-data:
+            schema: *id007
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  email:
+                    type: string
+                    format: email
+                required:
+                - email
+          description: ''
+  /api/user/password_reset/confirm:
+    post:
+      operationId: CreatePasswordToken
+      description: An Api View which provides a method to reset a password based on
+        a unique token
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: &id008
+              properties:
+                password:
+                  type: string
+                token:
+                  type: string
+              required:
+              - password
+              - token
+          application/x-www-form-urlencoded:
+            schema: *id008
+          multipart/form-data:
+            schema: *id008
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  password:
+                    type: string
+                  token:
+                    type: string
+                required:
+                - password
+                - token
+          description: ''
